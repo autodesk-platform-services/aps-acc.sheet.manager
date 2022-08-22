@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+/Excel_Exports
+/PDF_Uploads
+.DS_Store

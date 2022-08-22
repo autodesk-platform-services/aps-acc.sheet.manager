@@ -1,0 +1,42 @@
+﻿html, body{
+  min-height: 100%;
+  height: 100%;
+}
+
+.fill{
+  height: calc(100vh - 100px);
+}
+
+body {
+  padding-top: 60px; /* space for the top nav bar */
+  margin-right: 30px;
+}
+
+#sourceHubs {
+  overflow: auto;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+
+.InProgressImg{
+  width: 80%;
+  height: 80%;
+}
+
+.InProgressImg_table{
+  width: 30%;
+  height: 30%;
+}
+
+
+#forgeViewer {
+  width: 400px;
+  height:400px;
+}
+
+.tab-content{
+  height: 400px;
+}
+ 
+.datepicker > div { display: inherit; }
