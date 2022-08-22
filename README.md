@@ -5,7 +5,7 @@
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 [![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
 
-[![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet-api-green.svg)](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
+[![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet%20api-v1-green.svg)](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
