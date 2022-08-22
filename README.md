@@ -1,4 +1,4 @@
-# Forge Sheet Export & Import Sample
+# ACC Sheet Export & Import Sample
 
 [![Node.js](https://img.shields.io/badge/Node.js-12.19-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
@@ -29,7 +29,7 @@ This sample is implemented based on Node.js version of [Learn Forge Tutorial](ht
 ![thumbnail](/help/main.png)  
 
 ## Demonstration
-[Demo Video](https://youtu.be/CoreCvObcjU)
+[![https://youtu.be/CoreCvObcjU](https://img.youtube.com/CoreCvObcjU/0.jpg)]
 
 # Web App Setup
 
@@ -87,7 +87,7 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 
 5. Switch to Uploads tab of the main table view, click any row of upload whose status is IN_REVIEW, the corresponding reviewing sheets will be displayed.
 
-<p align="center"><img src="./help/upload.png" width="600" ></p>  
+<p align="center"><img src="./help/upload.png" width="800" ></p>  
 6. Click thumbnail column of the reviewing sheets table, the bigger thumbnail will shown up
 <p align="center"><img src="./help/thumbnail.png" width="400" ></p>  
 7. Click _title_ or _number_ column, you can edit the values.
@@ -97,10 +97,10 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 
 10. Click _Create New Version Set_ option of **Actions**, input name and issuanceDate of the new set and click _Execute_ button. It will create a new version set. Switch to Uploads tab of the main table view to check it. 
 
-<p align="center"><img src="./help/set.png" width="600" ></p>  
+<p align="center"><img src="./help/set.png" width="400" ></p>  
 
 11. Click _Create New Sheets_ option of **Actions**, input the id of the version set you want to upload to, click _Execute_ button, select one pdf file in the popup dialog. After the process is completed, the new upload will be available in the list of Uploads. The initial status is PROCESSING. When it is IN_REVIEW, you can review & publish sheets like step #5-9.
-<p align="center"><img src="./help/newupload.png" width="600" ></p>  
+<p align="center"><img src="./help/newupload.png" width="400" ></p>  
 
 
 ## Deployment
