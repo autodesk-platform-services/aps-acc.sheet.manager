@@ -37,7 +37,7 @@ This sample is implemented based on Node.js version of [Learn Forge Tutorial](ht
 
 1. **Forge Account**: Follow [this tutorial](http://learnforge.autodesk.io/#/account/) to create a Forge Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/forge/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
 2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
-3. **ACC Sheet**: In one project of Autodesk. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
+3. **ACC Sheet**: In one project of Autodesk Construction Cloud, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
 
@@ -79,26 +79,20 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 ## Use Cases
 
 1. Open the browser: [http://localhost:3000](http://localhost:3000). 
-2. After user logging, select a project. The code will start extracting all assets, version sets and uploads. They will be displayed in the main table view. Switch **Raw data** and **Human readable** to check __IDs__ data.
+2. After user logging, select a project. The code will start extracting all assets, version sets and uploads. They will be displayed in the main table view. Switch _Raw data_ to check __IDs__ data.
 3. Click _Export_ option of **Actions** and click _Execute_ button to download excel file. 
 4. Switch to Sheets tab of the main table view, click any row of sheet, the corresponding sheet will be loaded in Forge Viewer.
-
 <p align="center"><img src="./help/main.png" width="600" ></p>  
-
 5. Switch to Uploads tab of the main table view, click any row of upload whose status is IN_REVIEW, the corresponding reviewing sheets will be displayed.
-
 <p align="center"><img src="./help/upload.png" width="800" ></p>  
-6. Click thumbnail column of the reviewing sheets table, the bigger thumbnail will shown up
+6. Click thumbnail column of the reviewing sheets table, the bigger thumbnail will show up
 <p align="center"><img src="./help/thumbnail.png" width="400" ></p>  
 7. Click _title_ or _number_ column, you can edit the values.
 <p align="center"><img src="./help/patch.png" width="600" ></p>  
 8. Click **Modify Sheets**, Sheet API will update number or title with updated values
 9. Click **Publish Sheets**, Sheet API will publish the reviewing sheets. The status of the upload will be changed to PUBLISHED. If any issue with the reviewing sheets, the API will throw exception message.
-
 10. Click _Create New Version Set_ option of **Actions**, input name and issuanceDate of the new set and click _Execute_ button. It will create a new version set. Switch to Uploads tab of the main table view to check it. 
-
 <p align="center"><img src="./help/set.png" width="400" ></p>  
-
 11. Click _Create New Sheets_ option of **Actions**, input the id of the version set you want to upload to, click _Execute_ button, select one pdf file in the popup dialog. After the process is completed, the new upload will be available in the list of Uploads. The initial status is PROCESSING. When it is IN_REVIEW, you can review & publish sheets like step #5-9.
 <p align="center"><img src="./help/newupload.png" width="400" ></p>  
 
@@ -107,7 +101,7 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 
 To deploy this application to Heroku, the **Callback URL** for Forge must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for Forge.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-bim360.costmanagement.exchange.csv)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-acc.sheet.manager)
 
 
 ## Limitation
@@ -117,7 +111,7 @@ To deploy this application to Heroku, the **Callback URL** for Forge must use yo
 ## Tips & Tricks
 
 1. When editing title or number of reviewing sheets, ensure the values are unique in one version set. 
-2. this sample adoptes the library of editable-table, which conflicts to date picker of Bootstrap. So the sample uses common date pickter (datetime-local).
+2. This sample adoptes the library of editable-table, which conflicts to date-picker of Bootstrap. So the sample workaround by common date pickter (datetime-local).
 
 ## Further Reading
 **Document**
