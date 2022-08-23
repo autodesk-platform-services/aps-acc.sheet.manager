@@ -3,8 +3,8 @@
 [![Node.js](https://img.shields.io/badge/Node.js-12.19-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
-[![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
 
+[![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
 [![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet%20api-v1-green.svg)](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
@@ -80,7 +80,7 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 
 1. Open the browser: [http://localhost:3000](http://localhost:3000). 
 2. After user logging, select a project. The code will start extracting all assets, version sets and uploads. They will be displayed in the main table view. Switch _Raw data_ to check __IDs__ data.
-3. Click _Export_ option of **Actions** and click _Execute_ button to download excel file. 
+3. Click _Export_ option of **Actions** and click __Execute__ button to download excel file. 
 4. Switch to Sheets tab of the main table view, click any row of sheet, the corresponding sheet will be loaded in Forge Viewer.
 <p align="center"><img src="./help/main.png" width="600" ></p>  
 5. Switch to Uploads tab of the main table view, click any row of upload whose status is IN_REVIEW, the corresponding reviewing sheets will be displayed.
@@ -91,9 +91,9 @@ OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debuggin
 <p align="center"><img src="./help/patch.png" width="600" ></p>  
 8. Click **Modify Sheets**, Sheet API will update number or title with updated values
 9. Click **Publish Sheets**, Sheet API will publish the reviewing sheets. The status of the upload will be changed to PUBLISHED. If any issue with the reviewing sheets, the API will throw exception message.
-10. Click _Create New Version Set_ option of **Actions**, input name and issuanceDate of the new set and click _Execute_ button. It will create a new version set. Switch to Uploads tab of the main table view to check it. 
+10. Click __Create New Version Set__ option of **Actions**, input name and issuanceDate of the new set and click __Execute__ button. It will create a new version set. Switch to Uploads tab of the main table view to check it. 
 <p align="center"><img src="./help/set.png" width="400" ></p>  
-11. Click _Create New Sheets_ option of **Actions**, input the id of the version set you want to upload to, click _Execute_ button, select one pdf file in the popup dialog. After the process is completed, the new upload will be available in the list of Uploads. The initial status is PROCESSING. When it is IN_REVIEW, you can review & publish sheets like step #5-9.
+11. Click __Create New Sheets__ option of **Actions**, input the id of the version set you want to upload to, click __Execute__ button, select one pdf file in the popup dialog. After the process is completed, the new upload will be available in the list of Uploads. The initial status is PROCESSING. When it is IN_REVIEW, you can review & publish sheets like step #5-9.
 <p align="center"><img src="./help/newupload.png" width="400" ></p>  
 
 
