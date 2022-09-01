@@ -1,4 +1,4 @@
-# ACC Sheet Export & Import Sample
+# ACC Sheets Export & Import Sample
 
 [![Node.js](https://img.shields.io/badge/Node.js-12.19-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
@@ -52,9 +52,9 @@ Clone this project or download it (this `nodejs` branch only). It's recommended 
 Install the required packages using `npm install`.
 
 
-**Environment environment**
+**Environment**
 
-Set the enviroment variables with your client ID & secret and finally start it. Via command line, navigate to the folder where this repository was cloned and use the following:
+Set the environment variables with your client ID & secret and finally start it. Via command line, navigate to the folder where this repository was cloned and use the following:
 
 Mac OSX/Linux (Terminal)
 
@@ -74,7 +74,7 @@ Windows (use **Node.js command line** from Start menu)
 
     npm start
 
-OR, set enviroment variables of [launch.json](/.vscode/launch.json) for debugging.
+OR, set environment variables of [launch.json](/.vscode/launch.json) for debugging.
 
 ## Use Cases
 
@@ -111,18 +111,19 @@ To deploy this application to Heroku, the **Callback URL** for Forge must use yo
 ## Tips & Tricks
 
 1. When editing title or number of reviewing sheets, ensure the values are unique in one version set. 
-2. This sample adoptes the library of editable-table, which conflicts to date-picker of Bootstrap. So the sample workaround by common date pickter (datetime-local).
+2. This sample adopts the library of editable-table, which conflicts to date-picker of Bootstrap. So the sample workaround by common date picker (datetime-local).
 
 ## Further Reading
+
 **Document**
-- [Field Guide](https://forge.autodesk.com/en/docs/acc/v1/overview/field-guide/sheets/)
-- [API Reference](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
- 
+- [Sheets API Field Guid](https://forge.autodesk.com/en/docs/acc/v1/overview/field-guide/sheets/)
+- [Sheets API Reference](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
+
 **Tutorials**:
-- [uploading source pdf to publish sheets](https://forge.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
+- [Upload Files to ACC Sheets](https://forge.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
 
 **Blogs**:
-- [Forge Blog](https://forge.autodesk.com/categories/bim-360-api)
+- [Forge Blog](https://forge.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
 - [Field of View](https://fieldofviewblog.wordpress.com/), a BIM focused blog
 
 ## License
@@ -130,3 +131,6 @@ This sample is licensed under the terms of the [MIT License](http://opensource.o
 
 ## Written by
 Xiaodong Liang [@coldwood](https://twitter.com/coldwood), [Forge Advocate and Support](http://forge.autodesk.com)
+
+## Change Log
+- 09/01/2022: first release

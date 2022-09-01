@@ -1,13 +1,13 @@
 {
-  "name": "forge-bim360.asset.exchange.excel",
-  "description": "BIM 360 Asset API exchange sample",
-  "repository": "https://github.com/xiaodongliang/forge-bim360.asset.exchange.excel",
+  "name": "forge-acc.sheet.manager",
+  "description": "A few demonstrations of Sheet API of ACC ",
+  "repository": "https://github.com/Autodesk-Forge/forge-acc.sheet.manager",
   "logo": "",
   "keywords": [
       "autodesk",
       "forge",
-      "bim360",
-      "asset"
+      "acc",
+      "sheet"
   ],
   "env": {
       "FORGE_CLIENT_ID": {
