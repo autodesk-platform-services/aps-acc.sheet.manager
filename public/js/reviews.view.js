@@ -140,7 +140,7 @@ class ReviewsView {
   async getAllReviewSheets(projectId, uploadId) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/reviewSheets/${projectId}/${uploadId}`,
+        url: `/api/aps/sheets/reviewSheets/${projectId}/${uploadId}`,
         type: 'GET',
         success: (data) => {
           resolve(data)
@@ -154,7 +154,7 @@ class ReviewsView {
   async publishSheets(projectId, uploadId) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/publishSheets/${projectId}/${uploadId}`,
+        url: `/api/aps/sheets/publishSheets/${projectId}/${uploadId}`,
         type: 'GET',
         success: (data) => {
           resolve(data)
@@ -169,7 +169,7 @@ class ReviewsView {
 
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/patchReviewSheets/${projectId}/${uploadId}`,
+        url: `/api/aps/sheets/patchReviewSheets/${projectId}/${uploadId}`,
         type: 'POST',
         dataType: 'json',
         data: {data:JSON.stringify(payload)},

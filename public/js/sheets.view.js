@@ -223,7 +223,7 @@ class SheetsView {
   async getAllSheetsData(projectId, projectName) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/alldata/${projectId}/${encodeURIComponent(projectName)}`,
+        url: `/api/aps/sheets/alldata/${projectId}/${encodeURIComponent(projectName)}`,
         type: 'GET',
         success: (data) => {
           resolve(data)
@@ -237,7 +237,7 @@ class SheetsView {
   async getSheets(projectId, onepage = false, offset = 0, limit = 100) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/${projectId}/${encodeURIComponent(projectName)}`,
+        url: `/api/aps/sheets/${projectId}/${encodeURIComponent(projectName)}`,
         type: 'GET',
         success: (data) => {
           resolve(data)
@@ -252,7 +252,7 @@ class SheetsView {
   async getVersionSets(projectId, onepage = false, offset = 0, limit = 100) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/versionsets/${projectId}`,
+        url: `/api/aps/sheets/versionsets/${projectId}`,
         type: 'GET',
         success: (data) => {
           this._data.versionsetsTable = data
@@ -268,7 +268,7 @@ class SheetsView {
 
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/versionSet/${projectId}`,
+        url: `/api/aps/sheets/versionSet/${projectId}`,
         type: 'POST',
         dataType: 'json',
         data: {data:JSON.stringify(payload)},
@@ -285,7 +285,7 @@ class SheetsView {
   async getUploads(projectId, onepage = false, offset = 0, limit = 100) {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: `/api/forge/sheets/uplpads/${projectId}`,
+        url: `/api/aps/sheets/uplpads/${projectId}`,
         type: 'GET',
         success: (data) => {
           this._data.uploadsTable = data

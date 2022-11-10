@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Developer Acvocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -26,7 +26,7 @@ const config = require('./config');
 if (config.credentials.client_id == null || config.credentials.client_id == '' ||
     config.credentials.client_secret == null || config.credentials.client_secret == ''||
     config.credentials.callback_url == null || config.credentials.callback_url == '') {
-    console.error('Missing FORGE_CLIENT_ID or FORGE_CLIENT_SECRET or FORGE_CALLBACK_URL in env. variables.');
+    console.error('Missing APS_CLIENT_ID or APS_CLIENT_SECRET or APS_CALLBACK_URL in env. variables.');
 } 
 const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');  
@@ -36,17 +36,17 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
-    name: 'forge_session',
-    keys: ['forge_secure_key'],
+    name: 'aps_session',
+    keys: ['aps_secure_key'],
     maxAge: 14 * 24 * 60 * 60 * 1000 // 14 days, same as refresh token
 }));
 
 
 app.use(express.json({ limit: '50mb' }));
-app.use('/api/forge', require('./routes/endpoints/oauth'));
-app.use('/api/forge', require('./routes/endpoints/datamanagement'));
-app.use('/api/forge', require('./routes/endpoints/user'));
-app.use('/api/forge', require('./routes/endpoints/sheets'));
+app.use('/api/aps', require('./routes/endpoints/oauth'));
+app.use('/api/aps', require('./routes/endpoints/datamanagement'));
+app.use('/api/aps', require('./routes/endpoints/user'));
+app.use('/api/aps', require('./routes/endpoints/sheets'));
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(err.statusCode).json(err);

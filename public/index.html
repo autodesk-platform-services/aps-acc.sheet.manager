@@ -5,7 +5,7 @@
   <title>ACC Sheet Manager</title>
   <meta charset="utf-8" />
   <link rel="shortcut icon"
-    href="https://github.com/Autodesk-Forge/learn.forge.viewhubmodels/raw/master/img/favicon.ico">
+    href="https://cdn.autodesk.io/favicon.ico">
   
   
   <!-- Common packages: jQuery, Bootstrap, jsTree -->
@@ -31,7 +31,7 @@
   <script
     src="http://vitalets.github.io/x-editable/assets/x-editable/bootstrap3-editable/js/bootstrap-editable.js"></script>
 
-  <!-- Forge Viewer -->
+  <!-- APS Viewer -->
   <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.min.css"
     type="text/css">
   <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.min.js"></script>
@@ -45,9 +45,9 @@
   <script src="js/sheets.view.js"></script>
   <script src="js/reviews.view.js"></script>
   <script src="js/index.js"></script>
-  <script src="js/ForgeTree.js"></script>
+  <script src="js/APSTree.js"></script>
   <script src="js/socket_modules.js"></script>
-  <script src="js/ForgeViewer.js"></script>
+  <script src="js/Viewer.js"></script>
 
 
 </head>
@@ -61,7 +61,7 @@
       <ul class="nav navbar-nav left col-lg-4">
         <li>
           <a href="http://developer.autodesk.com" target="_blank">
-            <img alt="Autodesk Forge" src="//developer.static.autodesk.com/images/logo_forge-2-line.png" height="20">
+            <img alt="Autodesk APS" src="https://cdn.autodesk.io/logo/black/stacked.png" height="20">
           </a>
         </li>
       </ul>
@@ -118,7 +118,7 @@
                 <br />
                 <br />
                 <br /> You may also need to provision your<br /> ACC account for this app.<br />
-                <a href="https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps">Learn more</a>.
+                <a href="https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps">Learn more</a>.
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
               </div>
               <div class="col-md-8">
 
-                <div id="forgeViewer" style="height: 45vh;">
+                <div id="apsViewer" style="height: 45vh;">
                 </div>
               </div>
             </div>
@@ -342,7 +342,7 @@
           <h4 class="modal-title">Thanks for using this sample!</h4>
         </div>
         <div class="modal-body">
-          <p>To view your ACC Sheets files on this app please authorize my Forge Client ID with your ACC
+          <p>To view your ACC Sheets files on this app please authorize my APS Client ID with your ACC
             Account.
           </p>
           <p>
@@ -351,7 +351,7 @@
               <span class="glyphicon glyphicon-new-window"></span>
             </button>
           </p>
-          Use this as Forge Client ID:
+          Use this as APS Client ID:
           <div class="input-group">
             <input type="text" readonly="true" aria-describedby="CopyClientID" id="ClientID" class="form-control"
               value="" />
@@ -418,8 +418,8 @@
               <strong>Next</strong>.
             </li>
             <li>In the
-              <strong>Forge Client ID</strong> and
-              <strong>App Name</strong> fields, enter the Forge client ID and app name provided by the app retailer.
+              <strong>APS Client ID</strong> and
+              <strong>App Name</strong> fields, enter the APS client ID and app name provided by the app retailer.
             </li>
             <li>Select the
               <strong>I have saved the Account ID information securely</strong> checkbox.

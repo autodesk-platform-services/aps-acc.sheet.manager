@@ -19,7 +19,7 @@
 $(document).ready(function () {
   // first, check if current visitor is signed in
   $.ajax({
-    url: '/api/forge/oauth/token',
+    url: '/api/aps/oauth/token',
     success: function (res) {
       // yes, it is signed in...
       $('#autodeskSignOutButton').show();

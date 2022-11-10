@@ -5,7 +5,7 @@
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 
 [![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
-[![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet%20api-v1-green.svg)](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
+[![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet%20api-v1-green.svg)](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
@@ -16,14 +16,14 @@
 This sample demonstrates the following use cases:
 
 * Export sheets, version sets and uploads of ACC Sheet to excel file. The web application provides two options to display the ID properties either in **Raw data** and **Human readable form**.
-* View basic information of published sheets. View published sheet in Forge Viewer
+* View basic information of published sheets. View published sheet in APS Viewer
 * View basic information of uploads. List reviewing sheets of uploads (when upload status is IN_REVIEW)
 * Modify number and title of reviewing sheets
 * Publish reviewing sheets  
 * Create new sheets from source PDF 
 * Delete sheets (coming soon)
 
-This sample is implemented based on Node.js version of [Learn Forge Tutorial](https://github.com/Autodesk-Forge/learn.forge.viewhubmodels/tree/nodejs), please refer to https://learnforge.autodesk.io/ for the details about the framework.
+This sample is implemented based on Node.js version of [Learn APS Tutorial](http://aps.autodesk.com/tutorials), please refer to the tutorial for details about the framework.
 
 ## Thumbnail
 ![thumbnail](/help/main.png)  
@@ -35,8 +35,8 @@ This sample is implemented based on Node.js version of [Learn Forge Tutorial](ht
 
 ## Prerequisites
 
-1. **Forge Account**: Follow [this tutorial](http://learnforge.autodesk.io/#/account/) to create a Forge Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/forge/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
-2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://forge.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+1. **APS Account**: Follow [this tutorial](http://aps.autodesk.com/tutorials/) to create a APS Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
+2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
 3. **ACC Sheet**: In one project of Autodesk Construction Cloud, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
@@ -59,18 +59,18 @@ Set the environment variables with your client ID & secret and finally start it.
 Mac OSX/Linux (Terminal)
 
     npm install
-    export FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    export FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    export FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    export APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    export APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    export APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
 
     npm start
 
 Windows (use **Node.js command line** from Start menu)
 
     npm install
-    set FORGE_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
-    set FORGE_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
-    set FORGE_CALLBACK_URL=<<YOUR CALLBACK URL>>
+    set APS_CLIENT_ID=<<YOUR CLIENT ID FROM DEVELOPER PORTAL>>
+    set APS_CLIENT_SECRET=<<YOUR CLIENT SECRET>>
+    set APS_CALLBACK_URL=<<YOUR CALLBACK URL>>
 
     npm start
 
@@ -81,7 +81,7 @@ OR, set environment variables of [launch.json](/.vscode/launch.json) for debuggi
 1. Open the browser: [http://localhost:3000](http://localhost:3000). 
 2. After user logging, select a project. The code will start extracting all assets, version sets and uploads. They will be displayed in the main table view. Switch _Raw data_ to check _IDs_ data.
 3. Click _Export_ option of **Actions** and click _Execute_ button to download excel file. 
-4. Switch to Sheets tab of the main table view, click any row of sheet, the corresponding sheet will be loaded in Forge Viewer.
+4. Switch to Sheets tab of the main table view, click any row of sheet, the corresponding sheet will be loaded in APS Viewer.
 <p align="center"><img src="./help/main.png" width="600" ></p>  
 5. Switch to Uploads tab of the main table view, click any row of upload whose status is IN_REVIEW, the corresponding reviewing sheets will be displayed.
 <p align="center"><img src="./help/upload.png" width="800" ></p>  
@@ -99,9 +99,9 @@ OR, set environment variables of [launch.json](/.vscode/launch.json) for debuggi
 
 ## Deployment
 
-To deploy this application to Heroku, the **Callback URL** for Forge must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for Forge.
+To deploy this application to Heroku, the **Callback URL** for APS must use your `.herokuapp.com` address. After clicking on the button below, at the Heroku Create New App page, set your Client ID, Secret and Callback URL for APS.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Autodesk-Forge/forge-acc.sheet.manager)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/autodesk-platform-services/aps-acc.sheet.manager)
 
 
 ## Limitation
@@ -116,21 +116,21 @@ To deploy this application to Heroku, the **Callback URL** for Forge must use yo
 ## Further Reading
 
 **Document**
-- [Sheets API Field Guid](https://forge.autodesk.com/en/docs/acc/v1/overview/field-guide/sheets/)
-- [Sheets API Reference](https://forge.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
+- [Sheets API Field Guid](https://aps.autodesk.com/en/docs/acc/v1/overview/field-guide/sheets/)
+- [Sheets API Reference](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
 
 **Tutorials**:
-- [Upload Files to ACC Sheets](https://forge.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
+- [Upload Files to ACC Sheets](https://aps.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
 
 **Blogs**:
-- [Forge Blog](https://forge.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
+- [APS Blog](https://aps.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
 - [Field of View](https://fieldofviewblog.wordpress.com/), a BIM focused blog
 
 ## License
 This sample is licensed under the terms of the [MIT License](http://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for full details.
 
 ## Written by
-Xiaodong Liang [@coldwood](https://twitter.com/coldwood), [Forge Advocate and Support](http://forge.autodesk.com)
+Xiaodong Liang [@coldwood](https://twitter.com/coldwood), [Developer Advocate and Support](http://aps.autodesk.com)
 
 ## Change Log
 - 09/01/2022: first release

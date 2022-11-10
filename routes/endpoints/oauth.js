@@ -1,6 +1,6 @@
         /////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Forge Partner Development
+// Written by Developer Advocacy and Support
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -35,7 +35,7 @@ router.get('/callback/oauth', async (req, res, next) => {
 });
 
 router.get('/oauth/url', (req, res) => {
-    const url = `${config.credentials.ForgeBaseUrl}/authentication/v1/authorize?response_type=code` +
+    const url = `${config.credentials.APSBaseUrl}/authentication/v1/authorize?response_type=code` +
                 `&client_id=${config.credentials.client_id}` +
                 `&redirect_uri=${config.credentials.callback_url}` +
                 `&scope=${config.credentials.scopes.internal.join(" ")}`

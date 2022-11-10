@@ -89,7 +89,7 @@ $(document).ready(function () {
 
     if (job == 'export') {
       const projectName = $('#labelProjectName').text() 
-      window.location = `/api/forge/sheets/downloadExcel/${projectName}`
+      window.location = `/api/aps/sheets/downloadExcel/${projectName}`
 
     }
     else if (job == 'newset') {
@@ -121,7 +121,7 @@ $(document).ready(function () {
     if (files.length === 1) {
       const formData = new FormData();
       formData.append('pdf', files[0]);
-      const endpoint = `/api/forge/sheets/upload/${projectId}/${versionSetId}`;
+      const endpoint = `/api/aps/sheets/upload/${projectId}/${versionSetId}`;
 
       const response = await fetch(endpoint, { method: 'POST', body: formData });
       if (response.ok) {
