@@ -36,7 +36,7 @@ This sample is implemented based on Node.js version of [Learn APS Tutorial](http
 ## Prerequisites
 
 1. **APS Account**: Follow [this tutorial](http://aps.autodesk.com/tutorials/) to create a APS Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
-2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/blog/bim-360-docs-provisioning-forge-apps). 
+2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/manage-access-to-docs/). 
 3. **ACC Sheet**: In one project of Autodesk Construction Cloud, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
