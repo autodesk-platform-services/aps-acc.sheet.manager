@@ -7,12 +7,12 @@ function launchViewer(urn, viewableId) {
   var options = {
     env: 'AutodeskProduction2',
     api:"streamingV2",
-    getAccessToken: getForgeToken
+    getAccessToken: getAPSToken
   };
 
   Autodesk.Viewing.Initializer(options, () => {
-    document.getElementById('forgeViewer').innerHTML="";
-    viewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('forgeViewer'));
+    document.getElementById('apsViewer').innerHTML="";
+    viewer = new Autodesk.Viewing.GuiViewer3D(document.getElementById('apsViewer'));
     viewer.start();
     var documentId = 'urn:' + urn;
     Autodesk.Viewing.Document.load(documentId, onDocumentLoadSuccess, onDocumentLoadFailure);
@@ -31,8 +31,8 @@ function launchViewer(urn, viewableId) {
   }
 }
 
-function getForgeToken(callback) {
-  fetch('/api/forge/oauth/token').then(res => {
+function getAPSToken(callback) {
+  fetch('/api/aps/oauth/token').then(res => {
     res.json().then(data => {
       callback(data.access_token, data.expires_in);
     });
