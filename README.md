@@ -29,7 +29,8 @@ This sample is implemented based on Node.js version of [Learn APS Tutorial](http
 ![thumbnail](/help/main.png)  
 
 ## Demonstration
-[![https://youtu.be/CoreCvObcjU]( https://img.youtube.com/vi/CoreCvObcjU/0.jpg)]
+[![https://youtu.be/CoreCvObcjU](http://img.youtube.com/vi/CoreCvObcjU/0.jpg)](https://youtu.be/CoreCvObcjU "ACC Sheet Manager")
+
 
 # Web App Setup
 
