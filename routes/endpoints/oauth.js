@@ -1,4 +1,4 @@
-        /////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
 // Written by Developer Advocacy and Support
 //
@@ -35,10 +35,8 @@ router.get('/callback/oauth', async (req, res, next) => {
 });
 
 router.get('/oauth/url', (req, res) => {
-    const url = `${config.credentials.APSBaseUrl}/authentication/v1/authorize?response_type=code` +
-                `&client_id=${config.credentials.client_id}` +
-                `&redirect_uri=${config.credentials.callback_url}` +
-                `&scope=${config.credentials.scopes.internal.join(" ")}`
+    const oauth = new OAuth(req.session);
+    const url = oauth.getAuthorizationUrl();
     res.end(url);
 });
 

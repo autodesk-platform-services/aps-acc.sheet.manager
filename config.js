@@ -24,7 +24,7 @@ const credentials = {
     callback_url: process.env.APS_CALLBACK_URL,
     scopes: {
         // Required scopes for the server-side application
-        internal: ['data:read', 'data:write'], 
+        internal: ['data:read', 'data:write','viewables:read'], 
         // Required scopes for the server-side BIM360 Account Admin
         internal_2legged: ['account:read'],
         // Required scope for the client-side viewer

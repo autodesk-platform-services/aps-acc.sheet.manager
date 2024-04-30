@@ -1,6 +1,6 @@
 /////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
-// Written by Developer Advocacy and Support
+// Written by Developer Support and Advocacy
 //
 // Permission to use, copy, modify, and distribute this software in
 // object code form for any purpose and without fee is hereby granted,
@@ -16,20 +16,10 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
-const express = require('express');
-const { OAuth } = require('../services/oauth');
+'use strict';
 
-let router = express.Router();
+const { SdkManagerBuilder } = require('@aps_sdk/autodesk-sdkmanager');
 
-router.get('/user/profile', async (req, res) => {
-    const oauth = new OAuth(req.session);
-    const internalToken = await oauth.getInternalToken();
-    const profile = await oauth.getUserProfile(internalToken.access_token);
+const sdkManager = SdkManagerBuilder.create().build();
 
-    res.json({
-        name: `${profile.name}`,
-        picture: profile.picture
-    });
-});
-
-module.exports = router;
+module.exports = { sdkManager };

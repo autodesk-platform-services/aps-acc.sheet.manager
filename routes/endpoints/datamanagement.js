@@ -17,9 +17,8 @@
 /////////////////////////////////////////////////////////////////////
 
 const express = require('express');
-const { HubsApi, ProjectsApi } = require('forge-apis');
 const { OAuth } = require('../services/oauth');
-
+const { getHubs, getProjects } = require('../services/datamanagement');
 
 let router = express.Router();
 
@@ -36,70 +35,18 @@ router.get('/datamanagement', async (req, res) => {
     const internalToken = await oauth.getInternalToken();
     if (href === '#') {
         // If href is '#', it's the root tree node
-        getHubs(oauth.getClient(), internalToken, res);
+        const hubs = await getHubs(internalToken);
+        res.json(hubs);
     } else {
         // Otherwise let's break it by '/'
         const params = href.split('/');
         const resourceName = params[params.length - 2];
         const resourceId = params[params.length - 1];
         if (resourceName === 'hubs') {
-            getProjects(resourceId, oauth.getClient(), internalToken, res);
+            const projects = await getProjects(resourceId, internalToken);
+            res.json(projects);
         }
     }
 });
 
-async function getHubs(oauthClient, credentials, res) {
-    const hubs = new HubsApi();
-    const data = await hubs.getHubs({}, oauthClient, credentials);
-    res.json(data.body.data.map((hub) => {
-        let hubType;
-        switch (hub.attributes.extension.type) {
-            case 'hubs:autodesk.core:Hub':
-                hubType = 'hubs';
-                break;
-            case 'hubs:autodesk.a360:PersonalHub':
-                hubType = 'personalHub';
-                break;
-            case 'hubs:autodesk.bim360:Account':
-                hubType = 'bim360Hubs';
-                break;
-        }
-        return createTreeNode(
-            hub.links.self.href,
-            hub.attributes.name,
-            hubType,
-            true
-        );
-    }));
-}
-
-async function getProjects(hubId, oauthClient, credentials, res) {
-    const projects = new ProjectsApi();
-    const data = await projects.getHubProjects(hubId, {}, oauthClient, credentials);
-    res.json(data.body.data.map((project) => {
-        let projectType = 'projects';
-        switch (project.attributes.extension.type) {
-            case 'projects:autodesk.core:Project':
-                projectType = 'a360projects';
-                break;
-            case 'projects:autodesk.bim360:Project':
-                if(project.attributes.extension.data.projectType == 'ACC'){
-                    projectType = 'accprojects';  
-                }else{
-                    projectType = 'bim360projects'; 
-                }
-                break; 
-        }
-        return createTreeNode(
-            project.links.self.href,
-            project.attributes.name,
-            projectType,
-            false
-        );
-    }));
-}
-// Format data for tree
-function createTreeNode(_id, _text, _type, _children) {
-    return { id: _id, text: _text, type: _type, children: _children };
-}
 module.exports = router;

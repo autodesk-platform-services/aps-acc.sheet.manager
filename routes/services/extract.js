@@ -1,4 +1,3 @@
-
 /////////////////////////////////////////////////////////////////////
 // Copyright (c) Autodesk, Inc. All rights reserved
 // Written by Developer Advocacy and Support
@@ -16,6 +15,7 @@
 // DOES NOT WARRANT THAT THE OPERATION OF THE PROGRAM WILL BE
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
+
 const sheets_service = require('./sheets'); 
 
 async function exportAll(projectId,offset,limit,onePage=false){
