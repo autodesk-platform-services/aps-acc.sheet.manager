@@ -25,15 +25,18 @@ $(document).ready(function () {
       $('#autodeskSignOutButton').show();
       $('#autodeskSigninButton').hide();
 
-      $('#refreshSourceHubs').show(); 
+      $('#refreshSourceHubs').show();
 
       // prepare sign out
       $('#autodeskSignOutButton').click(function () {
-        $('#hiddenFrame').on('load', function (event) {
-          location.href = '/api/aps/oauth/signout';
-        });
-        $('#hiddenFrame').attr('src', 'https://accounts.autodesk.com/Authentication/LogOut');
-       
+        const iframe = document.createElement('iframe');
+        iframe.style.visibility = 'hidden';
+        iframe.src = 'https://accounts.autodesk.com/Authentication/LogOut';
+        document.body.appendChild(iframe);
+        iframe.onload = () => {
+          window.location.href = '/api/aps/oauth/signout';
+          document.body.removeChild(iframe);
+        };
       })
 
       // and refresh button
@@ -44,7 +47,7 @@ $(document).ready(function () {
       prepareUserHubsTree();
       showUser();
     },
-    error: function(err){
+    error: function (err) {
       $('#autodeskSignOutButton').hide();
       $('#autodeskSigninButton').show();
     }
@@ -66,7 +69,7 @@ $(document).ready(function () {
       $('#provisionAccountModal').modal('toggle');
       $('#sourceHubs').jstree(true).refresh();
     });
-  });  
+  });
 
 });
 
@@ -74,84 +77,84 @@ $(document).ready(function () {
 
 function prepareUserHubsTree() {
   $('#sourceHubs').jstree({
-      'core': {
-          'themes': { "icons": true },
-          'multiple': false,
-          'data': {
-              "url": '/api/aps/datamanagement',
-              "dataType": "json",
-              'cache': false,
-              'data': function (node) {
-                  $('#sourceHubs').jstree(true).toggle_node(node);
-                  return { "id": node.id };
-              }
-          }
-      },
-      'types': {
-        'default': { 'icon': 'glyphicon glyphicon-question-sign' },
-        '#': { 'icon': 'glyphicon glyphicon-user' },
-        'hubs': { 'icon': './img/a360hub.png' },
-        'personalHub': { 'icon': './img/a360hub.png' },
-        'bim360Hubs': { 'icon': './img/bim360hub.png' },
-        'bim360projects': { 'icon': './img/bim360project.png' },
-        'a360projects': { 'icon': './img/a360project.png' },
-        'accprojects': { 'icon': './img/accproject.svg' }
-      },
-      "sort": function (a, b) {
-          var a1 = this.get_node(a);
-          var b1 = this.get_node(b);
-          var parent = this.get_node(a1.parent);
-          if (parent.type === 'items') { // sort by version number
-              var id1 = Number.parseInt(a1.text.substring(a1.text.indexOf('v') + 1, a1.text.indexOf(':')))
-              var id2 = Number.parseInt(b1.text.substring(b1.text.indexOf('v') + 1, b1.text.indexOf(':')));
-              return id1 > id2 ? 1 : -1;
-          }
-          else if (a1.type !== b1.type) return a1.icon < b1.icon ? 1 : -1; // types are different inside folder, so sort by icon (files/folders)
-          else return a1.text > b1.text ? 1 : -1; // basic name/text sort
-      },
-      "plugins": ["types", "state", "sort"],
-      "state": { "key": "sourceHubs" }// key restore tree state
-  }).on('activate_node.jstree', function(evt, data){
-    if (data != null && data.node != null && (data.node.type == 'accprojects' )) {
+    'core': {
+      'themes': { "icons": true },
+      'multiple': false,
+      'data': {
+        "url": '/api/aps/datamanagement',
+        "dataType": "json",
+        'cache': false,
+        'data': function (node) {
+          $('#sourceHubs').jstree(true).toggle_node(node);
+          return { "id": node.id };
+        }
+      }
+    },
+    'types': {
+      'default': { 'icon': 'glyphicon glyphicon-question-sign' },
+      '#': { 'icon': 'glyphicon glyphicon-user' },
+      'hubs': { 'icon': './img/a360hub.png' },
+      'personalHub': { 'icon': './img/a360hub.png' },
+      'bim360Hubs': { 'icon': './img/bim360hub.png' },
+      'bim360projects': { 'icon': './img/bim360project.png' },
+      'a360projects': { 'icon': './img/a360project.png' },
+      'accprojects': { 'icon': './img/accproject.svg' }
+    },
+    "sort": function (a, b) {
+      var a1 = this.get_node(a);
+      var b1 = this.get_node(b);
+      var parent = this.get_node(a1.parent);
+      if (parent.type === 'items') { // sort by version number
+        var id1 = Number.parseInt(a1.text.substring(a1.text.indexOf('v') + 1, a1.text.indexOf(':')))
+        var id2 = Number.parseInt(b1.text.substring(b1.text.indexOf('v') + 1, b1.text.indexOf(':')));
+        return id1 > id2 ? 1 : -1;
+      }
+      else if (a1.type !== b1.type) return a1.icon < b1.icon ? 1 : -1; // types are different inside folder, so sort by icon (files/folders)
+      else return a1.text > b1.text ? 1 : -1; // basic name/text sort
+    },
+    "plugins": ["types", "state", "sort"],
+    "state": { "key": "sourceHubs" }// key restore tree state
+  }).on('activate_node.jstree', function (evt, data) {
+    if (data != null && data.node != null && (data.node.type == 'accprojects')) {
       $('#labelProjectHref').text(data.node.id);
       $('#labelProjectName').text(data.node.text);
 
-      
-       (async (href,projectName)=>{
 
-         //start the progress bar
-         $('.clsInProgress').show();
+      (async (href, projectName) => {
 
-         //get account id and project id
-         const accountId = href.split('/')[6]
-         const projectId = href.split('/')[8] 
-         const accountId_without_b = accountId.split('b.')[1]
+        //start the progress bar
+        $('.clsInProgress').show();
+
+        //get account id and project id
+        const accountId = href.split('/')[6]
+        const projectId = href.split('/')[8]
+        const accountId_without_b = accountId.split('b.')[1]
         const projectId_without_b = projectId.split('b.')[1]
 
         //store in hidden DOM
-         $('#labelProjectId').text(projectId_without_b);
-         $('#labelAccountId').text(accountId_without_b);
+        $('#labelProjectId').text(projectId_without_b);
+        $('#labelAccountId').text(accountId_without_b);
 
         //if the table contents are presented as raw id 
-        const isRaw = $('input[name="dataTypeToDisplay"]:checked').val() === 'rawData' 
+        const isRaw = $('input[name="dataTypeToDisplay"]:checked').val() === 'rawData'
         sheets_view.resetData()
         sheets_view.initTable('sheetsTable', isRaw)
         sheets_view.initTable('versionsetsTable', isRaw)
         sheets_view.initTable('uploadsTable', isRaw)
 
-        await sheets_view.getAllSheetsData(projectId_without_b,projectName) 
+        await sheets_view.getAllSheetsData(projectId_without_b, projectName)
 
         //wait the result at socket modules: SocketEnum.GET_SHEETS_ALL_DATA
         //......
 
 
-      })(data.node.id,data.node.text) 
-      
-      
-    }else{
+      })(data.node.id, data.node.text)
+
+
+    } else {
       alert('please select a ACC project!')
     }
-  }); 
+  });
 }
 
 function showUser() {

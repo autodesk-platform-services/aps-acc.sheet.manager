@@ -135,3 +135,4 @@ Xiaodong Liang [@coldwood](https://twitter.com/coldwood), [Developer Advocate an
 
 ## Change Log
 - 09/01/2022: first release
+- 04/30/2024: New APS SDK migration
