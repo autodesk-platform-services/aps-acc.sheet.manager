@@ -45,8 +45,7 @@ router.use(async (req, res, next) => {
   }
   req.oauth_client = oauth.getClient();
   req.oauth_token = await oauth.getInternalToken();
-  var twoleggedoauth = oauth.get2LeggedClient()
-  var twoleggedres = await twoleggedoauth.authenticate()
+  const twoleggedres = await oauth.get2LeggedToken();
   config.credentials.token_3legged = req.oauth_token.access_token
   config.credentials.token_2legged = twoleggedres.access_token
 
