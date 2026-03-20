@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 
-[![Forma Data Management](https://img.shields.io/badge/Forma%20Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
+[![Data Management](https://img.shields.io/badge/Forma%20Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
 [![Forma Sheet API](https://img.shields.io/badge/Forma%20Sheet%20api-v1-green.svg)](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
@@ -36,9 +36,9 @@ This sample is implemented based on Node.js version of [Learn APS Tutorial](http
 
 ## Prerequisites
 
-1. **APS Hub**: Follow [this tutorial](http://aps.autodesk.com/tutorials/) to create a APS Hub, activate subscription and create an app. For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
-2. **Forma Account**: must be Hub Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/manage-access-to-docs/). 
-3. **Forma Sheet**: In one project of Autodesk Construction Cloud, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
+1. **APS Account**: Follow [this tutorial](http://aps.autodesk.com/tutorials/) to create a APS Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
+2. **Autodesk Forma Hub**: must be Hub Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/manage-access-to-docs/). 
+3. **Forma Sheet**: In one Forma project , import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
 
@@ -136,3 +136,4 @@ Xiaodong Liang [@coldwood](https://twitter.com/coldwood), [Developer Advocate an
 ## Change Log
 - 09/01/2022: first release
 - 04/30/2024: New APS SDK migration
+- 03/24/2026: ACC to Forma rebranding
