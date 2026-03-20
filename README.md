@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 
-[![Data Management](https://img.shields.io/badge/Forma%20Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
+[![Data Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
 [![Forma Sheet API](https://img.shields.io/badge/Forma%20Sheet%20api-v1-green.svg)](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
