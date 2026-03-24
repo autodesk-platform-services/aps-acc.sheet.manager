@@ -1,11 +1,11 @@
-# ACC Sheets Export & Import Sample
+# Forma Sheets Export & Import Sample
 
 [![Node.js](https://img.shields.io/badge/Node.js-12.19-blue.svg)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-6.14.8-blue.svg)](https://www.npmjs.com/)
 ![Platforms](https://img.shields.io/badge/Web-Windows%20%7C%20MacOS%20%7C%20Linux-lightgray.svg)
 
 [![Data-Management](https://img.shields.io/badge/Data%20Management-v1-green.svg)](http://developer.autodesk.com/)
-[![ACC Sheet API](https://img.shields.io/badge/ACC%20Sheet%20api-v1-green.svg)](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
+[![Forma Sheet API](https://img.shields.io/badge/Forma%20Sheet%20api-v1-green.svg)](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
  
 
 [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](http://opensource.org/licenses/MIT)
@@ -15,7 +15,7 @@
 ## Description
 This sample demonstrates the following use cases:
 
-* Export sheets, version sets and uploads of ACC Sheet to excel file. The web application provides two options to display the ID properties either in **Raw data** and **Human readable form**.
+* Export sheets, version sets and uploads of Forma Sheet to excel file. The web application provides two options to display the ID properties either in **Raw data** and **Human readable form**.
 * View basic information of published sheets. View published sheet in APS Viewer
 * View basic information of uploads. List reviewing sheets of uploads (when upload status is IN_REVIEW)
 * Modify number and title of reviewing sheets
@@ -29,7 +29,7 @@ This sample is implemented based on Node.js version of [Learn APS Tutorial](http
 ![thumbnail](/help/main.png)  
 
 ## Demonstration
-[![https://youtu.be/CoreCvObcjU](http://img.youtube.com/vi/CoreCvObcjU/0.jpg)](https://youtu.be/CoreCvObcjU "ACC Sheet Manager")
+[![https://youtu.be/CoreCvObcjU](http://img.youtube.com/vi/CoreCvObcjU/0.jpg)](https://youtu.be/CoreCvObcjU "Forma Sheet Manager")
 
 
 # Web App Setup
@@ -37,8 +37,8 @@ This sample is implemented based on Node.js version of [Learn APS Tutorial](http
 ## Prerequisites
 
 1. **APS Account**: Follow [this tutorial](http://aps.autodesk.com/tutorials/) to create a APS Account, activate subscription and create an app. For this new app, use **http://localhost:3000/api/aps/callback/oauth** as Callback URL. Finally take note of the **Client ID** and **Client Secret**.
-2. **ACC Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/manage-access-to-docs/). 
-3. **ACC Sheet**: In one project of Autodesk Construction Cloud, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
+2. **Forma Account**: must be Account Admin to add the app integration. It is same to BIM360 integration. [Learn about how to integrate](https://aps.autodesk.com/en/docs/bim360/v1/tutorials/getting-started/manage-access-to-docs/). 
+3. **Forma Sheet**: In one project of Forma, import some sheets manually through UI features. Please check [product help](https://help.autodesk.com/view/BUILD/ENU/?guid=Upload_And_Publish_Sheets) for more information
 4. **Node.js**: basic knowledge with [**Node.js**](https://nodejs.org/en/).
 5. **JavaScript** basic knowledge with **jQuery**
 
@@ -121,7 +121,7 @@ To deploy this application to Heroku, the **Callback URL** for APS must use your
 - [Sheets API Reference](https://aps.autodesk.com/en/docs/acc/v1/reference/http/sheets-sheets-GET/)
 
 **Tutorials**:
-- [Upload Files to ACC Sheets](https://aps.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
+- [Upload Files to Forma Sheets](https://aps.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
 
 **Blogs**:
 - [APS Blog](https://aps.autodesk.com/en/docs/acc/v1/tutorials/sheets/upload-sheets/)
